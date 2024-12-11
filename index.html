@@ -5,16 +5,23 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>snake（贪吃蛇）</title>
     <link rel="stylesheet" href="css/style.css">
+    <title>snake11</title>
 </head>
 <body>
-<div class="info">Scroe: <span class="score">0</span> | Speed: <span class="speed">1X</span></div>
-<div class="board"></div>
+<div class="info"><div>Score: <span class="score"></span></div> | <div>Speed: <span class="speed"></span></div></div>
+<div class="box"></div>
 <div class="tip">
-    <div>START</div>
+    <div class="tip_use">
+        <p>Snake</p>
+        <p>control direction: &larr; : move to the left. &nbsp;&nbsp;&nbsp; &rarr; : move to the right. &nbsp;&nbsp;&nbsp; &uarr; : move to the up. &nbsp;&nbsp;&nbsp; &darr; : move to the down.</p>
+        <p>control speed: press '-' to decrease speed. press '+' to increase speed. press '0' to return to normal speed.</p>
+        <p>pause: press the keyboard space bar to pause or continue.</p>
+        <p>click start!</p>
+    </div>
+    <div class="tip_text"></div>
+    <button></button>
 </div>
-
-<script src="js/snake-game.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

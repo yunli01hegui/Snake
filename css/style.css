@@ -1,133 +1,113 @@
-
-* {
+*{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-
-html,
-body {
-    background-color: #000;
-    height: 100%;
-}
-
-body {
-    background: #222;
-    background: radial-gradient(#333, #111);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    font: 100%/1.5 sans-serif;
-    overflow: hidden;
+body{
+    background: radial-gradient(#333,#111);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .info{
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 5px;
-    text-align: center;
-}
-
-.board {
-    bottom: 0;
-    left: 0;
-    margin: auto;
+    width: 100vw;
     position: absolute;
-    right: 0;
-    top: 0;
-    /* transform: translate(-50%,-50%); */
-    z-index: 2;
-    
+    top:0;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    color: white;
+    font-size: 20px;
 }
-
-.tip {
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    background-color: #000;
-    opacity: 0.3;
+.box{
+    position: relative;
 }
-.tip div{
+.tip{
+    width: 100%;
+    height: 100%;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 3em;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
-
-
-.tile {
-    background: rgba(0, 0, 0, 0.15);
+.tip_text{
+    color: white;
+    text-transform: uppercase;
+    font-size: 100px;
+}
+.tip_use{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+.tip_use>p:first-child{
+    font-size: 50px;
+}
+button{
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+.tile{
     position: absolute;
-    transition-property:
-            background,
-            box-shadow,
-            opacity,
-            transform
-;
+    background: rgba(0,0,0,0.3);
     transform: translateZ(0);
     transition-duration: 3000ms;
+    transition-property: opacity,background,box-shadow,transform;
 }
-
-.tile:before {
-    bottom: 0;
+.tile::before{
     content: '';
-    height: 0;
-    left: 0;
-    margin: auto;
-    opacity: 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    left:0;
+    right:0;
+    top:0;
+    bottom: 0;
     width: 0;
-    transition: opacity 300ms;
+    height: 0;
+    margin: auto;
 }
-
-.tile.path:before {
+.tile.path::before{
     opacity: 1;
 }
-
-/*向上的三角箭头*/
-.tile.up:before {
-    border-bottom: 4px inset rgba(255, 255, 255, 0.15);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-}
-
-/*向下的三角箭头*/
-.tile.down:before {
-    border-top: 4px inset rgba(255, 255, 255, 0.15);
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-}
-/*向左的三角箭头*/
-.tile.left:before {
-    border-right: 4px inset rgba(255, 255, 255, 0.15);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-}
-
-/*向右的三角箭头*/
-.tile.right:before {
-    border-left: 4px inset rgba(255, 255, 255, 0.15);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-}
-
-
-.tile.up:before,
-.tile.down:before,
-.tile.left:before,
-.tile.right:before {
-    border-width: 6px;
-}
-
-
-.tile.passed {
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+.tile.passed{
+    background: rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px inset black;
     transition-duration: 0ms;
+}
+.tile.up::before{
+    border-bottom: 4px inset rgba(225,225,225,0.3);
+    border-top: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.tile.down::before{
+    border-top: 4px inset rgba(225,225,225,0.3);
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.tile.left::before{
+    border-right: 4px inset rgba(225,225,225,0.3);
+    border-top: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.tile.right::before{
+    border-left: 4px inset rgba(225,225,225,0.3);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.tile.up::before,.tile.down::before,.tile.left::before,.tile.right::before{
+    border-width: 6px;
 }
