@@ -545,7 +545,7 @@ const g={
 let sound_names=['background1.mp3','eatting.wav'];
 for (let sound_name of sound_names){
     let sound=new Audio();
-    sound.src=`./../sound/${sound_name}`;
+    sound.src=`./sound/${sound_name}`;
     sound.addEventListener('canplaythrough',()=>{
         game.sound_loads++;
         game.sounds[sound_name]=sound;
